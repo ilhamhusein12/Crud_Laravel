@@ -54,7 +54,8 @@ class CrudController extends Controller
      */
     public function show($id)
     {
-        //
+        $view = Crud::find($id);
+        return view('Crud.view_details')->with('lihat', $view);
     }
 
     /**

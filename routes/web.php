@@ -27,3 +27,4 @@ Route::post('/crud/store', 'CrudController@store');
 Route::get('/crud/delete/{id}', 'CrudController@destroy');
 Route::get('/crud/edit/{id}', 'CrudController@edit');
 Route::post('/crud/update', 'CrudController@update');
+Route::get('/crud/view/{id}', 'CrudController@show');

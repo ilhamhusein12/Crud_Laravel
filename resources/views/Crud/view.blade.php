@@ -20,7 +20,7 @@
                     <th>No</th>
                     <th>Name</th>
                     <th>Status</th>
-                    <th colspan="2">Action</th>
+                    <th colspan="3">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,8 +28,13 @@
                     <tr>
                         <td>{{ $key+1 }}</td>
                         <td>{{ $c->name }}</td>
-                        <td>{{ $c->status }}</td>
+                        @if($c->status == "Ready")
+                            <td class="text-success">{{ $c->status }}</td>
+                        @else
+                            <td class="text-danger">{{ $c->status }}</td>
+                        @endif
                         <td>
+                            <a href="{{ URL('/crud/view/'.$c->id) }}" class="btn btn-info">view</a>
                             <a href="{{ URL('/crud/edit/'.$c->id) }}" class="btn btn-warning">Edit</a>
                             <a href="{{ URL('/crud/delete/'.$c->id) }}" class="btn btn-danger"
                             onclick="return confirm('Apakah anda yakin?')">Hapus</a>
